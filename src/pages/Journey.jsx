@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Scale, BookOpen, ShieldCheck, Award } from "lucide-react";
 import DotGrid from "../components/shared/DotGrid";

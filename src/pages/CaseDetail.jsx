@@ -1,7 +1,7 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
-import { ArrowLeft, Scale, Award, Calendar, Landmark, User } from "lucide-react";
+import { ArrowLeft, Award, Calendar, Landmark, User } from "lucide-react";
 import { casesData } from "../data/casesData";
 import DotGrid from "../components/shared/DotGrid";
 

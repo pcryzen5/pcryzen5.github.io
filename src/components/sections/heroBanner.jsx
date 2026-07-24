@@ -1,6 +1,5 @@
-import React from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { Scale, Award, ShieldCheck } from "lucide-react";
+import { Scale, ShieldCheck } from "lucide-react";
 import highCourtImg from "../../assets/images/high_court.jpg";
 import lawyerImg from "../../assets/images/lawyer.png";
 import TrustPill from "../block/TrustPill";

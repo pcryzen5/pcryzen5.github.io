@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 
 export default function TrustPill({ text, icon: Icon, delay = 0 }) {

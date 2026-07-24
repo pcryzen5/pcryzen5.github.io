@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Send, CheckCircle, AlertTriangle } from "lucide-react";
@@ -25,7 +25,7 @@ export default function ContactForm() {
     }
   });
 
-  const onSubmit = async (data) => {
+  const onSubmit = async () => {
     setIsSubmitting(true);
     setSubmitError(null);
     try {
@@ -33,7 +33,7 @@ export default function ContactForm() {
       await new Promise((resolve) => setTimeout(resolve, 1500));
       setSubmitSuccess(true);
       reset();
-    } catch (err) {
+    } catch {
       setSubmitError("Failed to transmit request. Please verify connection and retry.");
     } finally {
       setIsSubmitting(false);
@@ -48,7 +48,7 @@ export default function ContactForm() {
           Brief Transmitted
         </h3>
         <p className="text-stone-400 text-sm max-w-sm font-light">
-          Your legal inquiry has been safely logged in our database. The senior counsel's clerk will review the brief and contact you within 24 hours.
+          Your legal inquiry has been safely logged in our database. The senior counsel&apos;s clerk will review the brief and contact you within 24 hours.
         </p>
         <button
           onClick={() => setSubmitSuccess(false)}

@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Scale, Briefcase, Award, GraduationCap } from "lucide-react";
 import HeroBanner from "../components/sections/heroBanner";

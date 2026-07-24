@@ -1,4 +1,3 @@
-import React from "react";
 import ContactForm from "../forms/contactForm";
 
 export default function ContactUs() {
