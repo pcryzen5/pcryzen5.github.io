@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Thestral Neue';
+  src: url('./assets/fonts/ThestralNeue-Bold.woff2') format('woff2'),
+       url('./assets/fonts/ThestralNeue-Bold.woff') format('woff'),
+       url('./assets/fonts/ThestralNeue-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  /* Override default fonts */
+  --font-display: 'Thestral Neue', 'Playfair Display', serif;
+  --font-sans: 'Inter', sans-serif;
+
+  /* Custom brand colors */
+  --color-gold-50: #fbf8f3;
+  --color-gold-100: #f5eedb;
+  --color-gold-200: #ebdcb9;
+  --color-gold-300: #dcc28c;
+  --color-gold-400: #caa15e;
+  --color-gold-500: #bd8840;
+  --color-gold-600: #a26b31;
+  --color-gold-700: #825028;
+  --color-gold-800: #6a4124;
+  --color-gold-900: #57361f;
+  --color-gold-950: #321d0f;
+
+  --color-neutral-850: #1a1917;
+  
+  /* Additional animations */
+  --animate-scroll-reveal: scroll-reveal linear both;
+}
+
+/* Custom Base CSS Styles */
+@utility text-glow-gold {
+  text-shadow: 0 0 12px rgba(189, 136, 64, 0.3);
+}
+
+@utility bg-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+}
+
+@utility bg-grid-pattern-light {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
+/* Base custom styles and scroll resets */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Navbar offset */
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Smooth customized scrollbars */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1917;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #bd8840;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #caa15e;
+}
