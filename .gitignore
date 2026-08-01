@@ -10,6 +10,15 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+
+# local env files
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# env files (generic fallback)
 *.local
 
 # Editor directories and files
@@ -22,3 +31,11 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+
+
+GITHUB_STORAGE_GUIDE.md
+EMAIL_SETUP_GUIDE.md
+PROJECT_OVERVIEW.md
+PORTFOLIO_FINAL.md
+
