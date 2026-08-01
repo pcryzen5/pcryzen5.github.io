@@ -1,20 +1,21 @@
-# ⚖️ John Doe — Senior Legal Counsel Portfolio
+# ✨ Shubham Purkait — Creative Developer Portfolio
 
-A premium, high-performance Single Page Application (SPA) portfolio built for Senior Legal Counsel & Advocate **John Doe**. This application showcases landmark litigation wins, legal practice areas, constitutional advocacy background, and an interactive consultation interface.
+A premium, high-performance Single Page Application (SPA) portfolio built for developer **Shubham Purkait**, specializing in Python backend engineering, data science pipelines, and intelligent AI models.
 
-Crafted with **React 19**, **Vite**, **Tailwind CSS v4**, and **Framer Motion**, the site features scroll-driven animations, cursor-tracking hover reveals, bespoke legal typography, and client-side form validation.
+Crafted with **React 19**, **Vite 6**, **Tailwind CSS v4**, and **Framer Motion 12**, the site features scroll-driven animations, an interactive 3D globe, full-screen particle effects, draggable photo grids, hover project reveals, and client-side form validation.
 
 ---
 
 ## 🌟 Key Features
 
-- **🏛️ Cinematic Hero Banner**: Dark high-court visual theme accented with gold glow typography, trust badges, and scroll-linked horizontal image movement.
-- **📜 Interactive Litigation Wins & Cursor Reveal**: Dynamic list of high-stakes court cases featuring smooth spring cursor-tracking image popups on hover (`HoverImageReveal`).
-- **🔍 Dedicated Case Briefs (`/case/:id`)**: Comprehensive breakdown of landmark cases including legal strategy, court jurisdiction, and precedent-setting outcomes.
-- **✨ Scroll-Driven Motion Graphics**: Powered by Framer Motion's `useScroll` and `useTransform` to seamlessly transition legal cutout graphics across page sections as the user scrolls.
-- **📋 Validated Consultation Form**: React Hook Form integrated with Zod validation schema (`contactSchema`) for appointment booking and direct channel routing (WhatsApp / Direct Call / Email).
-- **🎨 Custom Design System**: Custom font integration (`Thestral Neue` display font) paired with Tailwind CSS v4 `@theme` tokens, gold color palettes (`#bd8840`), and subtle ambient dot grids.
-- **📱 Fully Responsive Layout**: Built with a mobile-first philosophy, smooth hash-link navigation, and responsive drawers for seamless viewing on all device sizes.
+- **🌌 Cinematic Hero Banner & Globe**: Dark aesthetic landing screen featuring a dynamic scrambling CRT typewriter title in the custom **Movark** display font, paired with an interactive 3D SVG/Canvas Globe.
+- **✨ Full Page Glitter Background**: Integrated `GlitterWrap` for a gorgeous full-page background warp/glitter particle animation.
+- **📸 Draggable Grid Galleries**: Double archives ("My Life" and "My Failures") featuring custom infinite draggable photo grid walls that dynamically fetch images from user-configured GitHub repositories (falling back to curated Unsplash collections) and auto-scroll at 0.5x speed.
+- **📁 Hover-Reveal Selected Projects**: Integrated `HoverImageReveal` to showcase active work commissions, triggering spring-based cursor tracking of custom images.
+- **🔍 Project Details View (`/project/:id`)**: Comprehensive case briefs detailing role, core challenges, and creative solutions.
+- **📋 Validated Contact Form**: Integrated with Zod validation schema (`portfolioContactSchema.js`) and client-side form validation for direct channel emailing (via Web3Forms or Formspree integration).
+- **🎨 Custom Design System**: Built with modern typography utilizing custom **Movark** typeface, custom Tailwind v4 `@theme` tokens, pure black, and high-contrast styling variables.
+- **📱 Fully Responsive Layout**: Built with a mobile-first philosophy, smooth hash-link navigation, and responsive navigation drawers for seamless viewing on all device sizes.
 
 ---
 
@@ -36,38 +37,34 @@ Crafted with **React 19**, **Vite**, **Tailwind CSS v4**, and **Framer Motion**,
 
 ```text
 portfolio/
-├── public/                 # Static public assets & favicons
+├── public/                 # Static public assets & resume PDF
 ├── src/
 │   ├── assets/             # Brand assets, custom fonts, and images
-│   │   ├── fonts/          # Thestral Neue custom typography (.woff2, .woff, .otf)
-│   │   └── images/         # High Court backdrop and lawyer cutout images
+│   │   └── fonts/          # Movark custom typography (.otf)
 │   ├── components/         # Modular UI components separated by domain
 │   │   ├── block/          # Interactive UI blocks
-│   │   │   ├── HoverImageReveal.jsx   # Mouse-following case preview box
-│   │   │   └── TrustPill.jsx          # Certification & credential pills
+│   │   │   ├── DraggableGrid.jsx      # Infinite draggable, lightbox-enabled photo gallery
+│   │   │   ├── GlitterWrap.jsx        # Canvas-based warp/glitter particle background
+│   │   │   ├── Globe.jsx              # Interactive 3D SVG/Canvas Globe
+│   │   │   └── HoverImageReveal.jsx   # Mouse-following case/project preview box
 │   │   ├── forms/          # Form components
-│   │   │   └── contactForm.jsx        # Zod-validated legal consultation form
+│   │   │   └── PortfolioContactForm.jsx # Zod-validated portfolio contact form
 │   │   ├── sections/       # Main landing page sections
-│   │   │   ├── heroBanner.jsx         # Hero section with scroll animation
-│   │   │   ├── aboutUs.jsx            # Biography and core practice pillars
-│   │   │   ├── casesFought.jsx        # Key litigation victory list
-│   │   │   ├── contactUs.jsx          # Contact CTA section container
-│   │   │   └── MissionVission.jsx     # Strategic mission & vision cards
+│   │   │   ├── PortfolioHero.jsx      # Hero banner with Retro Scrambler & 3D Globe
+│   │   │   ├── PortfolioAbout.jsx     # Biography and double draggable photo archives
+│   │   │   ├── PortfolioProjects.jsx  # Highlighted project cases with HoverImageReveal
+│   │   │   └── PortfolioContact.jsx   # Direct communication links and form container
 │   │   └── shared/         # Global layout components
-│   │       ├── DotGrid.jsx            # Canvas/SVG ambient dot grid background
 │   │       ├── Footer.jsx             # Comprehensive footer navigation
 │   │       └── Navbar.jsx             # Sticky navbar with mobile drawer
 │   ├── data/               # Structured data stores
-│   │   └── casesData.js    # Data source for cases, legal strategies & outcomes
+│   │   └── portfolioData.js # Config data source for socials, resume, galleries, and projects
 │   ├── lib/                # Shared utilities & helper functions
 │   ├── pages/              # Top-level route views
-│   │   ├── Home.jsx        # Main landing page (Sections aggregate)
-│   │   ├── About.jsx       # Standalone About view
-│   │   ├── CaseDetail.jsx  # In-depth case brief detail view (`/case/:id`)
-│   │   ├── Contact.jsx     # Standalone Contact view
-│   │   └── Journey.jsx     # Career timeline & legal achievements view
+│   │   ├── PortfolioHome.jsx # Main landing page (Sections aggregate)
+│   │   └── ProjectDetail.jsx # In-depth project case brief view (`/project/:id`)
 │   ├── schemas/            # Validation schemas
-│   │   └── contactSchema.js# Zod schema for client consultation form
+│   │   └── portfolioContactSchema.js # Zod schema for client message form
 │   ├── App.css             # Component overrides & custom CSS
 │   ├── App.jsx             # Main router configuration & hash-scroll handler
 │   ├── index.css           # Tailwind v4 import, @theme definitions & font faces
@@ -131,32 +128,28 @@ The application uses Tailwind CSS v4's CSS-first theme configuration located in 
 
 ```css
 @theme {
-  /* Typography */
-  --font-display: 'Thestral Neue', 'Playfair Display', serif;
-  --font-sans: 'Inter', sans-serif;
+  /* Override default fonts */
+  --font-display: 'Movark', sans-serif;
+  --font-sans: 'Movark', sans-serif;
 
-  /* Custom Gold Palette */
-  --color-gold-400: #caa15e;
-  --color-gold-500: #bd8840;
-  --color-gold-600: #a26b31;
-
-  /* Dark Theme Neutrals */
-  --color-neutral-850: #1a1917;
+  /* Custom brand colors - Pure black & white themed */
+  --color-neutral-900: #0c0c0c;
+  --color-neutral-950: #000000;
+  --color-stone-900: #0f0f0f;
+  --color-stone-950: #000000;
 }
 ```
 
 Custom CSS utilities are defined for specialized UI effects:
-- `.text-glow-gold`: Adds a glowing aura to critical legal titles.
+- `.crt-text` / `.terminal-cursor`: Retro console style scramble text effects on the hero banner.
+- `.retro-glow-white`: Luminous, soft glowing aesthetic for header typography.
 - `.bg-grid-pattern`: Provides fine background line grids for architectural depth.
 
 ---
 
-## ⚖️ Key Cases Highlighted
+## 💻 Highlighted Projects
 
-1. **Constitutional Right to Privacy Advocacy** (*Supreme Court of India*) — Landmark defense protecting encrypted communications against surveillance mandates.
-2. **Apex Logistics vs. Trade Commission** (*NCLAT*) — Successful appeal against a blocked multi-billion dollar merger, establishing modern digital market definitions.
-3. **BioTech Labs Inc. vs. GenLife Pharma** (*Delhi High Court*) — Historic patent protection ruling securing record damages in genetic sequencing IP.
-4. **Coastal Fishermen Union vs. Narmada Chemicals** (*National Green Tribunal*) — Pro bono environmental class action enforcing the "Polluter Pays" principle.
+1. **Chess Game** (*Python/Pygame*) — Desktop chess game featuring decoupled MVC engine architecture, Minimax AI depth-3 search with Alpha-Beta pruning, and custom in-memory procedural audio synthesis.
 
 ---
 
