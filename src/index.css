@@ -2,34 +2,39 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'Thestral Neue';
-  src: url('./assets/fonts/ThestralNeue-Bold.woff2') format('woff2'),
-       url('./assets/fonts/ThestralNeue-Bold.woff') format('woff'),
-       url('./assets/fonts/ThestralNeue-Bold.otf') format('opentype');
-  font-weight: bold;
+  font-family: 'Movark';
+  src: url('./assets/fonts/movark-regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Movark';
+  src: url('./assets/fonts/movark-light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Movark';
+  src: url('./assets/fonts/movark-bold.otf') format('opentype');
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @theme {
   /* Override default fonts */
-  --font-display: 'Thestral Neue', 'Playfair Display', serif;
-  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Movark', sans-serif;
+  --font-sans: 'Movark', sans-serif;
 
-  /* Custom brand colors */
-  --color-gold-50: #fbf8f3;
-  --color-gold-100: #f5eedb;
-  --color-gold-200: #ebdcb9;
-  --color-gold-300: #dcc28c;
-  --color-gold-400: #caa15e;
-  --color-gold-500: #bd8840;
-  --color-gold-600: #a26b31;
-  --color-gold-700: #825028;
-  --color-gold-800: #6a4124;
-  --color-gold-900: #57361f;
-  --color-gold-950: #321d0f;
-
-  --color-neutral-850: #1a1917;
+  /* Custom brand colors - Pure black & white themed */
+  --color-neutral-900: #0c0c0c;
+  --color-neutral-950: #000000;
+  --color-stone-900: #0f0f0f;
+  --color-stone-950: #000000;
   
   /* Additional animations */
   --animate-scroll-reveal: scroll-reveal linear both;
@@ -38,6 +43,32 @@
 /* Custom Base CSS Styles */
 @utility text-glow-gold {
   text-shadow: 0 0 12px rgba(189, 136, 64, 0.3);
+}
+
+@utility retro-glow-white {
+  text-shadow: 
+    0 0 4px rgba(255, 255, 255, 0.8),
+    0 0 12px rgba(255, 255, 255, 0.4),
+    0 0 30px rgba(255, 255, 255, 0.1);
+}
+
+@utility terminal-cursor {
+  animation: cursor-blink 1s steps(2, start) infinite;
+}
+
+@utility crt-text {
+  animation: crt-flicker-anim 0.15s infinite;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes crt-flicker-anim {
+  0% { opacity: 0.985; }
+  50% { opacity: 1; }
+  100% { opacity: 0.99; }
 }
 
 @utility bg-grid-pattern {
@@ -72,14 +103,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1a1917;
+  background: #000000;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #bd8840;
+  background: #333333;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #caa15e;
+  background: #555555;
 }

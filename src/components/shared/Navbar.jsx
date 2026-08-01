@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { portfolioData } from "../../data/portfolioData";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -34,55 +35,74 @@ export default function Navbar() {
   };
 
   const navLinks = [
-    { name: "About Us", target: "about_us" },
-    { name: "Cases Fought", target: "cases_fought" },
+    { name: "About", target: "about" },
+    { name: "Work", target: "projects" },
     { name: "Contact", target: "contact" }
   ];
+
+  if (portfolioData.resumeUrl) {
+    navLinks.push({ name: "Resume", target: portfolioData.resumeUrl, isExternal: true });
+  }
 
   return (
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? "bg-stone-950/90 border-b border-gold-500/10 backdrop-blur-md py-4 shadow-lg" 
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${isScrolled
+          ? "bg-black/95 border-b border-stone-900 backdrop-blur-md py-4 shadow-lg"
           : "bg-transparent py-6"
-      }`}
+        }`}
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
-        
+      <div className="w-full px-6 md:px-12 flex items-center justify-between">
+
         {/* Left Side: Navigation Links (desktop) */}
         <nav className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <button
-              key={link.target}
-              onClick={() => handleNavClick(link.target)}
-              className="text-stone-300 hover:text-gold-400 font-medium text-sm tracking-widest uppercase transition-colors duration-200 cursor-pointer relative py-1 group"
-            >
-              {link.name}
-              <span className="absolute bottom-0 left-0 w-0 h-[2px] bg-gold-400 transition-all duration-300 group-hover:w-full" />
-            </button>
-          ))}
+          {navLinks.map((link) => {
+            if (link.isExternal) {
+              return (
+                <a
+                  key={link.name}
+                  href={link.target}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-stone-400 hover:text-white font-medium text-sm tracking-widest uppercase transition-colors duration-200 cursor-pointer relative py-1 group"
+                >
+                  {link.name}
+                  <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-white transition-all duration-300 group-hover:w-full" />
+                </a>
+              );
+            }
+            return (
+              <button
+                key={link.target}
+                onClick={() => handleNavClick(link.target)}
+                className="text-stone-400 hover:text-white font-medium text-sm tracking-widest uppercase transition-colors duration-200 cursor-pointer relative py-1 group"
+              >
+                {link.name}
+                <span className="absolute bottom-0 left-0 w-0 h-[1.5px] bg-white transition-all duration-300 group-hover:w-full" />
+              </button>
+            );
+          })}
         </nav>
 
         {/* Mobile menu trigger on the left */}
         <div className="flex md:hidden">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="text-stone-300 hover:text-gold-400 transition-colors"
+            className="text-stone-300 hover:text-white transition-colors"
           >
             {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
         </div>
 
-        {/* Right Side: Lawyer Name (John Doe) */}
+        {/* Right Side: Logo Name */}
         <div className="flex items-center">
           <button
             onClick={() => handleNavClick("hero")}
-            className="text-2xl font-display font-bold tracking-widest text-gold-400 hover:text-gold-300 transition-colors cursor-pointer text-glow-gold uppercase"
+            className="text-xl font-display font-bold tracking-widest text-white hover:text-stone-300 transition-colors cursor-pointer uppercase"
           >
-            John Doe
+            Shubham Purkait
           </button>
         </div>
       </div>
@@ -95,18 +115,34 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-stone-950 border-b border-gold-500/10"
+            className="md:hidden bg-black border-b border-stone-900"
           >
             <div className="px-6 py-6 flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <button
-                  key={link.target}
-                  onClick={() => handleNavClick(link.target)}
-                  className="text-stone-300 hover:text-gold-400 font-semibold text-lg text-left tracking-wider uppercase py-2 border-b border-stone-850"
-                >
-                  {link.name}
-                </button>
-              ))}
+              {navLinks.map((link) => {
+                if (link.isExternal) {
+                  return (
+                    <a
+                      key={link.name}
+                      href={link.target}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="text-stone-300 hover:text-white font-semibold text-lg text-left tracking-wider uppercase py-2 border-b border-stone-900 block"
+                    >
+                      {link.name}
+                    </a>
+                  );
+                }
+                return (
+                  <button
+                    key={link.target}
+                    onClick={() => handleNavClick(link.target)}
+                    className="text-stone-300 hover:text-white font-semibold text-lg text-left tracking-wider uppercase py-2 border-b border-stone-900"
+                  >
+                    {link.name}
+                  </button>
+                );
+              })}
             </div>
           </motion.div>
         )}
