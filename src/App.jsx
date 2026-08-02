@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/shared/Navbar";
 import Footer from "./components/shared/Footer";
 import PortfolioHome from "./pages/PortfolioHome";
