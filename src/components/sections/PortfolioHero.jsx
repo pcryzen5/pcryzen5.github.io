@@ -153,7 +153,9 @@ export default function PortfolioHero() {
             </button>
             {portfolioData.resumeUrl && (
               <a
-                href={portfolioData.resumeUrl}
+                href={portfolioData.resumeUrl.startsWith("http")
+                  ? portfolioData.resumeUrl
+                  : `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${portfolioData.resumeUrl.replace(/^\//, "")}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="px-8 py-3.5 bg-stone-900 border border-stone-800 hover:border-white text-stone-300 hover:text-white font-semibold uppercase tracking-wider text-xs rounded transition-colors cursor-pointer inline-flex items-center justify-center"

@@ -41,7 +41,10 @@ export default function Navbar() {
   ];
 
   if (portfolioData.resumeUrl) {
-    navLinks.push({ name: "Resume", target: portfolioData.resumeUrl, isExternal: true });
+    const resumePath = portfolioData.resumeUrl.startsWith("http")
+      ? portfolioData.resumeUrl
+      : `${import.meta.env.BASE_URL.replace(/\/$/, "")}/${portfolioData.resumeUrl.replace(/^\//, "")}`;
+    navLinks.push({ name: "Resume", target: resumePath, isExternal: true });
   }
 
   return (
