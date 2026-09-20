@@ -11,7 +11,27 @@ export default function ProjectDetail() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [id]);
+
+    const prevTitle = document.title;
+    const descTag = document.querySelector('meta[name="description"]');
+    const prevDesc = descTag ? descTag.getAttribute("content") : "";
+
+    if (project) {
+      document.title = `${project.title} — Shubham Purkait`;
+      if (descTag && project.summary) {
+        descTag.setAttribute("content", project.summary);
+      }
+    } else {
+      document.title = "Project Not Found — Shubham Purkait";
+    }
+
+    return () => {
+      document.title = prevTitle;
+      if (descTag && prevDesc) {
+        descTag.setAttribute("content", prevDesc);
+      }
+    };
+  }, [id, project]);
 
   if (!project) {
     return (

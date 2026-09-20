@@ -1,0 +1,270 @@
+{
+  "communities": {
+    "0": [
+      "ref_react",
+      "ref_react_dom",
+      "ref_react_router_dom",
+      "src_app",
+      "src_app_app",
+      "src_app_projectdetail",
+      "src_app_scrolltohash",
+      "src_components_block_glitterwrap",
+      "src_components_block_glitterwrap_component_defaults",
+      "src_components_block_glitterwrap_glitterwrap",
+      "src_components_block_glitterwrap_parsecolor",
+      "src_components_block_glitterwrap_rendertarget",
+      "src_components_shared_dotgrid",
+      "src_components_shared_dotgrid_dotgrid",
+      "src_components_shared_footer",
+      "src_components_shared_footer_footer",
+      "src_components_shared_navbar",
+      "src_components_shared_navbar_navbar",
+      "src_index",
+      "src_main",
+      "src_pages_portfoliohome_portfoliohome",
+      "src_pages_projectdetail",
+      "src_pages_projectdetail_projectdetail"
+    ],
+    "1": [
+      "eslint_config",
+      "package",
+      "package_name",
+      "package_private",
+      "package_type",
+      "package_version",
+      "ref_d3_geo",
+      "ref_eslint",
+      "ref_eslint_js",
+      "ref_eslint_plugin_react",
+      "ref_eslint_plugin_react_hooks",
+      "ref_eslint_plugin_react_refresh",
+      "ref_globals",
+      "ref_tailwindcss",
+      "ref_tailwindcss_vite",
+      "ref_three",
+      "ref_types_react",
+      "ref_types_react_dom",
+      "ref_vite",
+      "ref_vitejs_plugin_react",
+      "vite_config",
+      "vite_config_manualchunks"
+    ],
+    "2": [
+      "ref_framer_motion",
+      "src_components_block_hoverimagereveal",
+      "src_components_block_hoverimagereveal_aligntoflex",
+      "src_components_block_hoverimagereveal_aligntotext",
+      "src_components_block_hoverimagereveal_default_font",
+      "src_components_block_hoverimagereveal_default_items",
+      "src_components_block_hoverimagereveal_default_items_data",
+      "src_components_block_hoverimagereveal_default_transition",
+      "src_components_block_hoverimagereveal_hoverimagereveal",
+      "src_components_block_trustpill",
+      "src_components_block_trustpill_trustpill",
+      "src_components_sections_portfoliocertificates",
+      "src_components_sections_portfoliocertificates_portfoliocertificates",
+      "src_components_sections_portfoliohero",
+      "src_components_sections_portfoliohero_portfoliohero",
+      "src_components_sections_portfoliohero_retrocomputertitle",
+      "src_components_sections_portfolioprojects",
+      "src_components_sections_portfolioprojects_portfolioprojects",
+      "src_data_portfolio_certificates_data",
+      "src_data_portfolio_certificates_data_certificatesdata",
+      "src_pages_portfoliohome"
+    ],
+    "3": [
+      "ref_hookform_resolvers",
+      "ref_lucide_react",
+      "ref_react_hook_form",
+      "ref_zod",
+      "src_components_forms_portfoliocontactform",
+      "src_components_forms_portfoliocontactform_portfoliocontactform",
+      "src_components_sections_portfolioabout",
+      "src_components_sections_portfolioabout_portfolioabout",
+      "src_components_sections_portfoliocontact",
+      "src_components_sections_portfoliocontact_portfoliocontact",
+      "src_data_portfoliodata",
+      "src_data_portfoliodata_portfoliodata",
+      "src_schemas_contactschema",
+      "src_schemas_contactschema_contactschema",
+      "src_schemas_portfoliocontactschema",
+      "src_schemas_portfoliocontactschema_portfoliocontactschema"
+    ],
+    "4": [
+      "src_components_block_globe",
+      "src_components_block_globe_cacheddotcoordsmap",
+      "src_components_block_globe_globe",
+      "src_components_block_globe_latlngtoposition",
+      "src_components_block_globe_mapdensityuitospacing",
+      "src_components_block_globe_mapdetailtostepsize",
+      "src_components_block_globe_mapdotsizeuitomultiplier",
+      "src_components_block_globe_mapdragspeeduitosensitivity",
+      "src_components_block_globe_maplinear",
+      "src_components_block_globe_mapmarkerdotsizeuitomultiplier",
+      "src_components_block_globe_mapscaleuitomultiplier",
+      "src_components_block_globe_mapspeeduitointernal",
+      "src_components_block_globe_normalizesmoothing",
+      "src_components_block_globe_parsecolortorgba",
+      "src_components_block_globe_simplifyring"
+    ],
+    "5": [
+      "package_devdependencies",
+      "package_devdependencies_eslint",
+      "package_devdependencies_eslint_js",
+      "package_devdependencies_eslint_plugin_react",
+      "package_devdependencies_eslint_plugin_react_hooks",
+      "package_devdependencies_eslint_plugin_react_refresh",
+      "package_devdependencies_globals",
+      "package_devdependencies_tailwindcss",
+      "package_devdependencies_tailwindcss_vite",
+      "package_devdependencies_types_react",
+      "package_devdependencies_types_react_dom",
+      "package_devdependencies_vite",
+      "package_devdependencies_vitejs_plugin_react"
+    ],
+    "6": [
+      "package_dependencies",
+      "package_dependencies_d3_geo",
+      "package_dependencies_framer_motion",
+      "package_dependencies_hookform_resolvers",
+      "package_dependencies_lucide_react",
+      "package_dependencies_react",
+      "package_dependencies_react_dom",
+      "package_dependencies_react_hook_form",
+      "package_dependencies_react_router_dom",
+      "package_dependencies_three",
+      "package_dependencies_zod"
+    ],
+    "7": [
+      "src_components_block_draggablegrid",
+      "src_components_block_draggablegrid_draggablegrid",
+      "src_components_block_draggablegrid_gridimageitem",
+      "src_lib_imageutils",
+      "src_lib_imageutils_getlightboximageurl",
+      "src_lib_imageutils_getoptimizedimageurl"
+    ],
+    "8": [
+      "package_scripts",
+      "package_scripts_build",
+      "package_scripts_dev",
+      "package_scripts_lint",
+      "package_scripts_preview"
+    ],
+    "9": [
+      "index_html",
+      "public_og_image_jpg"
+    ],
+    "10": [
+      "github_deploy_workflow"
+    ],
+    "11": [
+      "postcss_config"
+    ],
+    "12": [
+      "public_og_image_png"
+    ],
+    "13": [
+      "readme"
+    ],
+    "14": [
+      "src_assets_images_high_court"
+    ],
+    "15": [
+      "src_assets_images_lawyer"
+    ]
+  },
+  "cohesion": {
+    "0": 0.1383399209486166,
+    "1": 0.11688311688311688,
+    "2": 0.13333333333333333,
+    "3": 0.18333333333333332,
+    "4": 0.3142857142857143,
+    "5": 0.15384615384615385,
+    "6": 0.18181818181818182,
+    "7": 0.6,
+    "8": 0.4,
+    "9": 1.0,
+    "10": 1.0,
+    "11": 1.0,
+    "12": 1.0,
+    "13": 1.0,
+    "14": 1.0,
+    "15": 1.0
+  },
+  "gods": [
+    {
+      "id": "src_components_block_globe_globe",
+      "label": "Globe()",
+      "degree": 13
+    },
+    {
+      "id": "ref_react",
+      "label": "react",
+      "degree": 12
+    },
+    {
+      "id": "ref_framer_motion",
+      "label": "framer-motion",
+      "degree": 10
+    },
+    {
+      "id": "src_components_block_globe_maplinear",
+      "label": "mapLinear()",
+      "degree": 9
+    },
+    {
+      "id": "ref_lucide_react",
+      "label": "lucide-react",
+      "degree": 8
+    },
+    {
+      "id": "src_data_portfoliodata_portfoliodata",
+      "label": "portfolioData",
+      "degree": 8
+    },
+    {
+      "id": "package_scripts",
+      "label": "scripts",
+      "degree": 5
+    },
+    {
+      "id": "ref_react_router_dom",
+      "label": "react-router-dom",
+      "degree": 5
+    },
+    {
+      "id": "ref_zod",
+      "label": "zod",
+      "degree": 3
+    },
+    {
+      "id": "src_components_block_draggablegrid_draggablegrid",
+      "label": "DraggableGrid()",
+      "degree": 3
+    }
+  ],
+  "surprises": [
+    {
+      "source": "GridImageItem()",
+      "target": "getOptimizedImageUrl()",
+      "source_files": [
+        "src/components/block/DraggableGrid.jsx",
+        "src/lib/imageUtils.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "cross-file semantic connection"
+    },
+    {
+      "source": "DraggableGrid()",
+      "target": "getLightboxImageUrl()",
+      "source_files": [
+        "src/components/block/DraggableGrid.jsx",
+        "src/lib/imageUtils.js"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "calls",
+      "why": "cross-file semantic connection"
+    }
+  ]
+}

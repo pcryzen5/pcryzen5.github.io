@@ -145,9 +145,11 @@ export default function GlitterWrap(props) {
         });
 
         const syncCount = () => {
-            const count = Math.max(
-                1,
-                Math.floor(propsRef.current.particleCount)
+            const isMobile = typeof window !== "undefined" && window.innerWidth < 768;
+            const maxAllowed = isMobile ? 120 : 250;
+            const count = Math.min(
+                maxAllowed,
+                Math.max(1, Math.floor(propsRef.current.particleCount))
             );
             if (stars.length === count) return;
             if (stars.length > count) {
@@ -348,6 +350,11 @@ export default function GlitterWrap(props) {
         }
 
         const loop = (t) => {
+            if (document.hidden) {
+                lastT = t;
+                rafRef.current = requestAnimationFrame(loop);
+                return;
+            }
             const deltaSec = (t - lastT) / 1000;
             lastT = t;
             drawFrame(deltaSec);

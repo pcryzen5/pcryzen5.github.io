@@ -9,6 +9,26 @@ export default defineConfig({
     react(),
     tailwindcss()
   ],
+  build: {
+    chunkSizeWarningLimit: 650,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('three') || id.includes('d3-geo')) {
+              return 'vendor-three';
+            }
+            if (id.includes('framer-motion')) {
+              return 'vendor-motion';
+            }
+            if (id.includes('lucide-react')) {
+              return 'vendor-icons';
+            }
+          }
+        }
+      }
+    }
+  },
   server: {
     port: 3000,
     open: true

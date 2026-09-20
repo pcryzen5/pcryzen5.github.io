@@ -1,6 +1,52 @@
 import { useRef, useState, useEffect } from "react";
 import { motion, AnimatePresence, useMotionValue } from "framer-motion";
 import { X, ZoomIn } from "lucide-react";
+import { getOptimizedImageUrl, getLightboxImageUrl } from "../../lib/imageUtils";
+
+function GridImageItem({ item, isDragging, onSelect }) {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const thumbUrl = getOptimizedImageUrl(item.url, {
+    width: 320,
+    height: 320,
+    fit: "cover",
+    quality: 80,
+    format: "webp",
+  });
+
+  return (
+    <motion.div
+      whileHover={{ scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 350, damping: 25 }}
+      onClick={() => {
+        if (!isDragging) {
+          onSelect(item);
+        }
+      }}
+      className="group relative bg-stone-950 border border-stone-900 rounded-lg overflow-hidden cursor-pointer aspect-square"
+    >
+      {/* Sleek skeleton shimmer loader while downloading */}
+      {!isLoaded && (
+        <div className="absolute inset-0 bg-stone-900/60 animate-pulse flex items-center justify-center">
+          <div className="w-5 h-5 border-2 border-stone-700 border-t-stone-400 rounded-full animate-spin opacity-40" />
+        </div>
+      )}
+
+      <img
+        src={thumbUrl}
+        alt="Gallery Item"
+        loading="lazy"
+        decoding="async"
+        onLoad={() => setIsLoaded(true)}
+        className={`w-full h-full object-cover select-none pointer-events-none transition-opacity duration-300 ${
+          isLoaded ? "opacity-100" : "opacity-0"
+        }`}
+      />
+      <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+        <ZoomIn className="w-5 h-5 text-white" />
+      </div>
+    </motion.div>
+  );
+}
 
 export default function DraggableGrid({ items = [], autoScrollSpeed = 0.5 }) {
   const containerRef = useRef(null);
@@ -85,28 +131,12 @@ export default function DraggableGrid({ items = [], autoScrollSpeed = 0.5 }) {
         className="absolute left-0 top-0 w-[180%] sm:w-[160%] md:w-[140%] p-8 grid grid-cols-5 sm:grid-cols-6 md:grid-cols-7 gap-3 z-10"
       >
         {items.map((item, index) => (
-          <motion.div
+          <GridImageItem
             key={item.id || index}
-            whileHover={{ scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 350, damping: 25 }}
-            onClick={() => {
-              // Only open lightbox if it wasn't a drag release
-              if (!isDragging) {
-                setActiveItem(item);
-              }
-            }}
-            className="group relative bg-stone-950 border border-stone-900 rounded-lg overflow-hidden cursor-pointer aspect-square"
-          >
-            <img
-              src={item.url}
-              alt="Gallery Item"
-              className="w-full h-full object-cover select-none pointer-events-none"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-              <ZoomIn className="w-5 h-5 text-white" />
-            </div>
-          </motion.div>
+            item={item}
+            isDragging={isDragging}
+            onSelect={setActiveItem}
+          />
         ))}
       </motion.div>
 
@@ -139,9 +169,11 @@ export default function DraggableGrid({ items = [], autoScrollSpeed = 0.5 }) {
               </button>
 
               <img
-                src={activeItem.url}
+                src={getLightboxImageUrl(activeItem.url, 1200, 85)}
                 alt="Magnified View"
                 className="max-w-full max-h-[80vh] object-contain block"
+                loading="eager"
+                decoding="async"
               />
             </motion.div>
           </motion.div>

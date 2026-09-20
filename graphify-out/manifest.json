@@ -1,0 +1,236 @@
+{
+  "eslint.config.js": {
+    "mtime": 1784816474.236143,
+    "seen": 1789916968.9589143,
+    "ast_hash": "c3b6d10358db4bbb86cb7175173e46c2",
+    "semantic_hash": "c3b6d10358db4bbb86cb7175173e46c2"
+  },
+  "package.json": {
+    "mtime": 1785428963.9715285,
+    "seen": 1789916968.9589143,
+    "ast_hash": "baa7bf708f42dc68b42d333b187e02d6",
+    "semantic_hash": "baa7bf708f42dc68b42d333b187e02d6"
+  },
+  "postcss.config.js": {
+    "mtime": 1784816469.8120778,
+    "seen": 1789916968.9589143,
+    "ast_hash": "b6c5335ed44789c31c97028a05693c24",
+    "semantic_hash": "b6c5335ed44789c31c97028a05693c24"
+  },
+  "public/data/ne_110m_land.json": {
+    "mtime": 1788323959.067541,
+    "seen": 1789916968.9589143,
+    "ast_hash": "4c5f4e714afd19c8e6f77362cc415c69",
+    "semantic_hash": "4c5f4e714afd19c8e6f77362cc415c69"
+  },
+  "src/App.jsx": {
+    "mtime": 1788324860.1743631,
+    "seen": 1789916968.9589143,
+    "ast_hash": "448578acf319656c713ac6e734cfc6c4",
+    "semantic_hash": "448578acf319656c713ac6e734cfc6c4"
+  },
+  "src/components/block/DraggableGrid.jsx": {
+    "mtime": 1788324512.826589,
+    "seen": 1789916968.9589143,
+    "ast_hash": "8738791c065e8523b87cc9c93d47c259",
+    "semantic_hash": "8738791c065e8523b87cc9c93d47c259"
+  },
+  "src/components/block/GlitterWrap.jsx": {
+    "mtime": 1788324750.3736198,
+    "seen": 1789916968.9589143,
+    "ast_hash": "3c7208ed717683d1924fae96f2751356",
+    "semantic_hash": "3c7208ed717683d1924fae96f2751356"
+  },
+  "src/components/block/Globe.jsx": {
+    "mtime": 1788324675.2848861,
+    "seen": 1789916968.9589143,
+    "ast_hash": "3ded30ae65ecea7b6e9c9459d6c43a5e",
+    "semantic_hash": "3ded30ae65ecea7b6e9c9459d6c43a5e"
+  },
+  "src/components/block/HoverImageReveal.jsx": {
+    "mtime": 1784897137.886157,
+    "seen": 1789916968.9589143,
+    "ast_hash": "35f8f52db2a3eea3096342cb73215e49",
+    "semantic_hash": "35f8f52db2a3eea3096342cb73215e49"
+  },
+  "src/components/block/TrustPill.jsx": {
+    "mtime": 1784897144.6764276,
+    "seen": 1789916968.9589143,
+    "ast_hash": "47a828a8165d482f544e72ad8f25a624",
+    "semantic_hash": "47a828a8165d482f544e72ad8f25a624"
+  },
+  "src/components/forms/PortfolioContactForm.jsx": {
+    "mtime": 1785432215.1940453,
+    "seen": 1789916968.9589143,
+    "ast_hash": "f661e45beab2f833760c0ccee80fc82d",
+    "semantic_hash": "f661e45beab2f833760c0ccee80fc82d"
+  },
+  "src/components/sections/PortfolioAbout.jsx": {
+    "mtime": 1788324538.6316974,
+    "seen": 1789916968.9589143,
+    "ast_hash": "d8319f3e56e4b31463ed5bf63c9984ae",
+    "semantic_hash": "d8319f3e56e4b31463ed5bf63c9984ae"
+  },
+  "src/components/sections/PortfolioCertificates.jsx": {
+    "mtime": 1786552183.7041726,
+    "seen": 1789916968.9589143,
+    "ast_hash": "f956f18b0aa946d5e456791b7db28f1e",
+    "semantic_hash": "f956f18b0aa946d5e456791b7db28f1e"
+  },
+  "src/components/sections/PortfolioContact.jsx": {
+    "mtime": 1785594732.6442132,
+    "seen": 1789916968.9589143,
+    "ast_hash": "cc1e8704e2252a97e0e72e97537a06e3",
+    "semantic_hash": "cc1e8704e2252a97e0e72e97537a06e3"
+  },
+  "src/components/sections/PortfolioHero.jsx": {
+    "mtime": 1786552387.3148267,
+    "seen": 1789916968.9589143,
+    "ast_hash": "5c82abb90b663e4d7112aa50c46dea74",
+    "semantic_hash": "5c82abb90b663e4d7112aa50c46dea74"
+  },
+  "src/components/sections/PortfolioProjects.jsx": {
+    "mtime": 1785389079.8224094,
+    "seen": 1789916968.9589143,
+    "ast_hash": "e065a3a84d22ef69c0b149e44080ca0c",
+    "semantic_hash": "e065a3a84d22ef69c0b149e44080ca0c"
+  },
+  "src/components/shared/DotGrid.jsx": {
+    "mtime": 1784897192.3712559,
+    "seen": 1789916968.9589143,
+    "ast_hash": "68a81980f7fd53d7a2f76a2c2108600a",
+    "semantic_hash": "68a81980f7fd53d7a2f76a2c2108600a"
+  },
+  "src/components/shared/Footer.jsx": {
+    "mtime": 1785569863.1468942,
+    "seen": 1789916968.9589143,
+    "ast_hash": "05523255b918929a8d4628f737731eb1",
+    "semantic_hash": "05523255b918929a8d4628f737731eb1"
+  },
+  "src/components/shared/Navbar.jsx": {
+    "mtime": 1786552193.9422631,
+    "seen": 1789916968.9589143,
+    "ast_hash": "c6dc16763091bfdb272971c35b18a411",
+    "semantic_hash": "c6dc16763091bfdb272971c35b18a411"
+  },
+  "src/data/portfolioData.js": {
+    "mtime": 1788324480.8352487,
+    "seen": 1789916968.9589143,
+    "ast_hash": "1530f61f734f3b1b8d7865c28e615807",
+    "semantic_hash": "1530f61f734f3b1b8d7865c28e615807"
+  },
+  "src/data/portfolio_certificates_data.js": {
+    "mtime": 1786552178.0959287,
+    "seen": 1789916968.9589143,
+    "ast_hash": "61e4a11dfb849a533fa1f26b10bc0dbb",
+    "semantic_hash": "61e4a11dfb849a533fa1f26b10bc0dbb"
+  },
+  "src/lib/imageUtils.js": {
+    "mtime": 1788324460.28657,
+    "seen": 1789916968.9589143,
+    "ast_hash": "d207f0d07a4a58cea5665a6d10c1e1a0",
+    "semantic_hash": "d207f0d07a4a58cea5665a6d10c1e1a0"
+  },
+  "src/main.jsx": {
+    "mtime": 1784816625.4742718,
+    "seen": 1789916968.9589143,
+    "ast_hash": "1a09784350cddbc4a2fddad944b24a91",
+    "semantic_hash": "1a09784350cddbc4a2fddad944b24a91"
+  },
+  "src/pages/PortfolioHome.jsx": {
+    "mtime": 1786552188.518161,
+    "seen": 1789916968.9589143,
+    "ast_hash": "6a8cc7ae0b83a653199425ac47d53828",
+    "semantic_hash": "6a8cc7ae0b83a653199425ac47d53828"
+  },
+  "src/pages/ProjectDetail.jsx": {
+    "mtime": 1788336751.211141,
+    "seen": 1789916968.9589143,
+    "ast_hash": "c4d72123df912a246c0d526fa8a213b8",
+    "semantic_hash": "c4d72123df912a246c0d526fa8a213b8"
+  },
+  "src/schemas/contactSchema.js": {
+    "mtime": 1784816533.2841134,
+    "seen": 1789916968.9589143,
+    "ast_hash": "b1c9443b52e2c3edfc49afe381da64de",
+    "semantic_hash": "b1c9443b52e2c3edfc49afe381da64de"
+  },
+  "src/schemas/portfolioContactSchema.js": {
+    "mtime": 1785044720.7668393,
+    "seen": 1789916968.9589143,
+    "ast_hash": "120816bcdd34da0ecbcc1c668812cd2c",
+    "semantic_hash": "120816bcdd34da0ecbcc1c668812cd2c"
+  },
+  "vite.config.js": {
+    "mtime": 1788325193.5302033,
+    "seen": 1789916968.9589143,
+    "ast_hash": "e64c4292a490e327c8c599f655f63843",
+    "semantic_hash": "e64c4292a490e327c8c599f655f63843"
+  },
+  ".github/workflows/deploy.yml": {
+    "mtime": 1785640532.984808,
+    "seen": 1789916968.9589143,
+    "ast_hash": "b3f3bb578d9c1d86cd17c89ab346b596",
+    "semantic_hash": "b3f3bb578d9c1d86cd17c89ab346b596"
+  },
+  "README.md": {
+    "mtime": 1785603633.5810494,
+    "seen": 1789916968.9589143,
+    "ast_hash": "046ae8b39f7f9b459d9713a23d7bb294",
+    "semantic_hash": "046ae8b39f7f9b459d9713a23d7bb294"
+  },
+  "index.html": {
+    "mtime": 1788336745.0397239,
+    "seen": 1789916968.9589143,
+    "ast_hash": "0d7bf3647b3e4a9feb4ff9862655b8be",
+    "semantic_hash": "0d7bf3647b3e4a9feb4ff9862655b8be"
+  },
+  "public/robots.txt": {
+    "mtime": 1788336697.059793,
+    "seen": 1789916968.9589143,
+    "ast_hash": "5bbe895610d1253ed843d4f6ddece553",
+    "semantic_hash": "5bbe895610d1253ed843d4f6ddece553"
+  },
+  "src/assets/fonts/iFonts-License.txt": {
+    "mtime": 1784636440.0,
+    "seen": 1789916968.9589143,
+    "ast_hash": "18dfce8a14eeffa13eba05f52fc80d38",
+    "semantic_hash": "18dfce8a14eeffa13eba05f52fc80d38"
+  },
+  "public/shubham_resume.pdf": {
+    "mtime": 1784902847.7324505,
+    "seen": 1789916968.9589143,
+    "ast_hash": "590b56c7b420154ee3abba4c536436ed",
+    "semantic_hash": "590b56c7b420154ee3abba4c536436ed"
+  },
+  "public/favicon.svg": {
+    "mtime": 1785603505.3993392,
+    "seen": 1789916968.9589143,
+    "ast_hash": "853bca5071f53e8ae9d256bbf34f2ad1",
+    "semantic_hash": "853bca5071f53e8ae9d256bbf34f2ad1"
+  },
+  "public/og-image.jpg": {
+    "mtime": 1788336651.221215,
+    "seen": 1789916968.9589143,
+    "ast_hash": "6e6ae07238913aa8c265bd3cac568db9",
+    "semantic_hash": "6e6ae07238913aa8c265bd3cac568db9"
+  },
+  "public/og-image.png": {
+    "mtime": 1788336651.221215,
+    "seen": 1789916968.9589143,
+    "ast_hash": "6e6ae07238913aa8c265bd3cac568db9",
+    "semantic_hash": "6e6ae07238913aa8c265bd3cac568db9"
+  },
+  "src/assets/images/high_court.jpg": {
+    "mtime": 1784813450.3822615,
+    "seen": 1789916968.9589143,
+    "ast_hash": "ee4ee4a5eaeafc305d3aba1c06a26549",
+    "semantic_hash": "ee4ee4a5eaeafc305d3aba1c06a26549"
+  },
+  "src/assets/images/lawyer.png": {
+    "mtime": 1784813510.6365554,
+    "seen": 1789916968.9589143,
+    "ast_hash": "be4eaebbb3dadc1ff258a81c021af21c",
+    "semantic_hash": "be4eaebbb3dadc1ff258a81c021af21c"
+  }
+}

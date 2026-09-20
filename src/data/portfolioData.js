@@ -46,79 +46,87 @@ export const portfolioData = {
     codolio: "https://codolio.com/profile/Shubham56" // Update with your actual Codolio URL
   },
 
-  // Personal snapshots - just URLs as requested
+  // Personal snapshots - preloaded with user's GitHub images for instant rendering
   lifeGallery: [
     {
       id: "life-1",
-      url: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80"
+      url: "https://raw.githubusercontent.com/pcryzen5/portfolio-my-life/main/1785420389483.png"
     },
     {
       id: "life-2",
-      url: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80"
+      url: "https://raw.githubusercontent.com/pcryzen5/portfolio-my-life/main/1785420419435.png"
     },
     {
       id: "life-3",
-      url: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=800&q=80"
+      url: "https://raw.githubusercontent.com/pcryzen5/portfolio-my-life/main/1785727768532.png"
     },
     {
       id: "life-4",
-      url: "https://images.unsplash.com/photo-1511556532299-8f662fc26c06?auto=format&fit=crop&w=800&q=80"
+      url: "https://raw.githubusercontent.com/pcryzen5/portfolio-my-life/main/1787196645126.png"
     },
     {
       id: "life-5",
-      url: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80"
+      url: "https://raw.githubusercontent.com/pcryzen5/portfolio-my-life/main/4df2185b077292f348d8ed1dfe2d1e66.jpg"
     },
     {
       id: "life-6",
-      url: "https://images.unsplash.com/photo-1447752875215-b2761acb3c5d?auto=format&fit=crop&w=800&q=80"
+      url: "https://raw.githubusercontent.com/pcryzen5/portfolio-my-life/main/IMG_20260301_171437129_HDR.jpg"
     },
     {
       id: "life-7",
-      url: "https://images.unsplash.com/photo-1490730141103-6cac27aaab94?auto=format&fit=crop&w=800&q=80"
+      url: "https://raw.githubusercontent.com/pcryzen5/portfolio-my-life/main/IMG_20260403_203127404_HDR.jpg"
     },
     {
       id: "life-8",
-      url: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=800&q=80"
+      url: "https://raw.githubusercontent.com/pcryzen5/portfolio-my-life/main/IMG_20260417_190521387.jpg"
     },
     {
       id: "life-9",
-      url: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&w=800&q=80"
+      url: "https://raw.githubusercontent.com/pcryzen5/portfolio-my-life/main/IMG_20260714_075934107_HDR.jpg"
+    },
+    {
+      id: "life-10",
+      url: "https://raw.githubusercontent.com/pcryzen5/portfolio-my-life/main/IMG_20260728_080306528_HDR.jpg"
+    },
+    {
+      id: "life-11",
+      url: "https://raw.githubusercontent.com/pcryzen5/portfolio-my-life/main/IMG_20260803_082133088.jpg"
+    },
+    {
+      id: "life-12",
+      url: "https://raw.githubusercontent.com/pcryzen5/portfolio-my-life/main/IMG_20260806_082846482.jpg"
+    },
+    {
+      id: "life-13",
+      url: "https://raw.githubusercontent.com/pcryzen5/portfolio-my-life/main/IMG_20260811_080632107_HDR.jpg"
+    },
+    {
+      id: "life-14",
+      url: "https://raw.githubusercontent.com/pcryzen5/portfolio-my-life/main/WhatsApp%20Image%202026-07-30%20at%207.37.50%20PM%20(1).jpeg"
+    },
+    {
+      id: "life-15",
+      url: "https://raw.githubusercontent.com/pcryzen5/portfolio-my-life/main/WhatsApp%20Image%202026-07-30%20at%207.37.50%20PM%20(2).jpeg"
+    },
+    {
+      id: "life-16",
+      url: "https://raw.githubusercontent.com/pcryzen5/portfolio-my-life/main/WhatsApp%20Image%202026-07-30%20at%207.37.50%20PM.jpeg"
     }
   ],
 
-  // Failures and conceptual experimental snapshots - just URLs as requested
+  // Failures and conceptual experimental snapshots - preloaded with user's GitHub images
   failuresGallery: [
     {
       id: "fail-1",
-      url: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=800&q=80"
+      url: "https://raw.githubusercontent.com/pcryzen5/portfolio-my-failures/main/IMG_20260815_115235825_HDR.jpg"
     },
     {
       id: "fail-2",
-      url: "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?auto=format&fit=crop&w=800&q=80"
+      url: "https://raw.githubusercontent.com/pcryzen5/portfolio-my-failures/main/Screenshot%20(175).png"
     },
     {
       id: "fail-3",
-      url: "https://images.unsplash.com/photo-1550684848-fac1c5b4e853?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: "fail-4",
-      url: "https://images.unsplash.com/photo-1518640467707-6811f4a6ab73?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: "fail-5",
-      url: "https://images.unsplash.com/photo-1604871000636-074fa5117945?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: "fail-6",
-      url: "https://images.unsplash.com/photo-1558591710-4b4a1ae0f04d?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: "fail-7",
-      url: "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=800&q=80"
-    },
-    {
-      id: "fail-8",
-      url: "https://images.unsplash.com/photo-1507608869274-d3177c8bb4c7?auto=format&fit=crop&w=800&q=80"
+      url: "https://raw.githubusercontent.com/pcryzen5/portfolio-my-failures/main/Screenshot%20(723).png"
     }
   ],
 
@@ -132,17 +140,17 @@ export const portfolioData = {
       client: "Self",
       role: "Developer",
       image: "https://thumbs.dreamstime.com/b/chess-game-setup-wooden-chessboard-image-shows-pieces-set-up-starting-position-divided-two-sets-white-383919558.jpg",
-      summary: "This is a fully-featured, desktop chess game application built with Python and Pygame. It implements standard chess rules and features both Two-Player (local human vs. human) and Player vs. Computer (AI) modes, including three difficulty levels.",
-      description: "Chess Game is a desktop application built in Python using the Pygame library, showcasing a fully decoupled Model-View-Controller (MVC) architecture. The game features local two-player matches, customizable timers, visual board themes, procedural sound generation, and a game history navigator. It also incorporates an AI player powered by a depth-3 Minimax search algorithm with Alpha-Beta pruning and positional evaluations via Piece-Square Tables (PST).           Sorry but couldn't make it live",
+      summary: "A feature-rich desktop chess application built with Python and Pygame, featuring a decoupled MVC architecture, procedural WAV audio generation, customizable board themes, game timers, and a depth-3 Minimax AI.",
+      description: "Chess Game is a polished desktop application featuring a fully decoupled Model-View-Controller (MVC) architecture, separating the core chess engine from the Pygame GUI. The application includes robust implementations of standard chess rules (including castling, en passant, pawn promotion, and draw rules), customizable Blitz/Rapid timers, multiple board themes, and an interactive move history navigator. The game features an AI player powered by a depth-3 Minimax search algorithm with Alpha-Beta pruning and Piece-Square Table (PST) positional evaluation. Additionally, it implements a custom in-memory synthesizer to procedurally generate all sound effects at runtime without external audio files.",
       challenges: [
-        "Decoupling game state validation rules from the visual rendering framework to allow headless execution and robust unit testing.",
-        "Optimizing the AI's search time for complex board positions using Minimax search without causing noticeable lag in the GUI.",
-        "Integrating sound effects into the game without increasing the bundle size or requiring external audio file assets."
+        "Architectural separation: Decoupling complex chess validation state (castling, en passant, draw conditions) from the Pygame rendering loop to support headless testing and future WebAssembly porting.",
+        "Real-time AI performance: Minimizing search latency of a depth-3 Minimax algorithm during complex middlegame phases to prevent frame drops in the Pygame GUI thread.",
+        "Asset-free audio integration: Providing realistic gameplay sound feedback (moves, captures, checks) without relying on bulky external WAV/MP3 files or asset-loading dependencies."
       ],
       solutions: [
-        "Restructured the codebase into a clean MVC design, isolating all board models, move verification, and AI logic into a standalone, library-independent engine.py module.",
-        "Implemented Alpha-Beta pruning to discard sub-optimal branches early in the search tree, achieving a depth of 3 within milliseconds, and utilizing Piece-Square Tables for heuristic evaluations.",
-        "Designed an in-memory sound generator using Python's standard wave and struct libraries to procedurally synthesize WAV audio signals for moves, captures, and checks at runtime."
+        "Re-architected the system into a clean MVC design, moving all rules validation, AI, and game state mechanics into a pure Python library-independent engine.py module, enabling 100% test coverage using pytest.",
+        "Optimized search efficiency by implementing Alpha-Beta pruning and move ordering heuristics to discard sub-optimal branches early, achieving a depth-3 minimax search within milliseconds, supported by Piece-Square Tables (PST) for positional evaluation.",
+        "Created a procedural audio synthesizer that generates raw PCM data using Python's wave and struct libraries, writing WAV signals to memory buffers on startup to play sound effects dynamically without loading disk assets."
       ],
       stack: ["Python", "Pygame", "Minimax AI", "Alpha-Beta Pruning", "Procedural Audio Synthesis", "Unit Testing (pytest)"],
       github: "https://github.com/pcryzen5/Chess_Game.git",

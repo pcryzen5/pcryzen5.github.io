@@ -19,6 +19,10 @@ import {
 } from "three";
 import { geoEquirectangular, geoPath } from "d3-geo";
 
+let cachedLandFeatures = null;
+let cachedDotCoordsMap = new Map();
+
+
 function parseColorToRgba(input) {
     if (!input || input.trim() === "") return { r: 0, g: 0, b: 0, a: 0 };
     const str = input.trim();
@@ -219,9 +223,9 @@ export default function Globe({
         canvas.style.inset = "0";
         canvas.style.width = "100%";
         canvas.style.height = "100%";
-        canvas.style.display = "block";
-        canvas.style.opacity = "0";
-        canvas.style.visibility = "hidden";
+        canvas.style.opacity = "1";
+        canvas.style.visibility = "visible";
+        canvas.style.transition = "opacity 0.4s ease-out";
         container.appendChild(canvas);
 
         const resolvedOceanColor = oceanColor;
@@ -396,11 +400,27 @@ export default function Globe({
         const loadWorldData = async () => {
             try {
                 setIsLoading(true);
-                const response = await fetch(
-                    "https://raw.githubusercontent.com/martynafford/natural-earth-geojson/refs/heads/master/50m/physical/ne_50m_land.json"
-                );
-                if (!response.ok) throw new Error("Failed to load land data");
-                const landFeatures = await response.json();
+                let landFeatures = cachedLandFeatures;
+                if (!landFeatures) {
+                    const localUrl = `${import.meta.env.BASE_URL.replace(/\/$/, "")}/data/ne_110m_land.json`;
+                    try {
+                        const response = await fetch(localUrl);
+                        if (response.ok) {
+                            landFeatures = await response.json();
+                        }
+                    } catch (e) {
+                        // Local fetch error, fallback below
+                    }
+
+                    if (!landFeatures) {
+                        const fallbackUrl =
+                            "https://raw.githubusercontent.com/martynafford/natural-earth-geojson/refs/heads/master/110m/physical/ne_110m_land.json";
+                        const response = await fetch(fallbackUrl);
+                        if (!response.ok) throw new Error("Failed to load land data");
+                        landFeatures = await response.json();
+                    }
+                    cachedLandFeatures = landFeatures;
+                }
 
                 while (continentOutlineGroup.children.length > 0) {
                     continentOutlineGroup.remove(
@@ -515,47 +535,6 @@ export default function Globe({
                     );
                 }
 
-                const bitmapWidth = 2048;
-                const bitmapHeight = 1024;
-                const offscreenCanvas = document.createElement("canvas");
-                offscreenCanvas.width = bitmapWidth;
-                offscreenCanvas.height = bitmapHeight;
-                const ctx = offscreenCanvas.getContext("2d", {
-                    willReadFrequently: true,
-                });
-                if (!ctx) throw new Error("Canvas not supported");
-                const projection = geoEquirectangular().fitSize(
-                    [bitmapWidth, bitmapHeight],
-                    { type: "Sphere" }
-                );
-                const pathGenerator = geoPath()
-                    .projection(projection)
-                    .context(ctx);
-                ctx.fillStyle = "#000";
-                ctx.fillRect(0, 0, bitmapWidth, bitmapHeight);
-                ctx.fillStyle = "#fff";
-                ctx.beginPath();
-                landFeatures.features.forEach((feature) => {
-                    pathGenerator(feature);
-                });
-                ctx.fill();
-                const imageData = ctx.getImageData(
-                    0,
-                    0,
-                    bitmapWidth,
-                    bitmapHeight
-                );
-                const pixels = imageData.data;
-                const isOnLand = (lng, lat) => {
-                    const x =
-                        Math.round(((lng + 180) / 360) * bitmapWidth) %
-                        bitmapWidth;
-                    const y = Math.round(((90 - lat) / 180) * bitmapHeight);
-                    const clampedY = Math.max(0, Math.min(bitmapHeight - 1, y));
-                    const idx = (clampedY * bitmapWidth + x) * 4;
-                    return pixels[idx] > 128;
-                };
-
                 if (fill === "solid") {
                     const texW = 1024;
                     const texH = 512;
@@ -576,7 +555,7 @@ export default function Globe({
                             let lng = (u - 0.25) * 360;
                             lng = ((((lng + 180) % 360) + 360) % 360) - 180;
                             const lat = (v - 0.5) * 180;
-                            const onLand = allDots || isOnLand(lng, lat);
+                            const onLand = allDots;
                             const idx = (ty * texW + tx) * 4;
                             if (onLand) {
                                 data[idx] = fr;
@@ -604,20 +583,67 @@ export default function Globe({
                     dotInstances = new Mesh(fillGeometry, fillMaterial);
                     globeGroup.add(dotInstances);
                 } else {
-                    const dotCoordinates = [];
-                    const baseStep = dotSpacing * 0.08;
-                    for (let lat = -90; lat <= 90; lat += baseStep) {
-                        const latRad = (Math.abs(lat) * Math.PI) / 180;
-                        const cosLat = Math.cos(latRad);
-                        const lngStep =
-                            cosLat > 0.01
-                                ? baseStep / Math.max(0.3, cosLat)
-                                : 360;
-                        for (let lng = -180; lng < 180; lng += lngStep) {
-                            if (allDots || isOnLand(lng, lat)) {
-                                dotCoordinates.push([lng, lat]);
+                    const dotCoordKey = `${dotSpacing}_${allDots}`;
+                    let dotCoordinates = cachedDotCoordsMap.get(dotCoordKey);
+
+                    if (!dotCoordinates) {
+                        const bitmapWidth = 1024;
+                        const bitmapHeight = 512;
+                        const offscreenCanvas = document.createElement("canvas");
+                        offscreenCanvas.width = bitmapWidth;
+                        offscreenCanvas.height = bitmapHeight;
+                        const ctx = offscreenCanvas.getContext("2d", {
+                            willReadFrequently: true,
+                        });
+                        if (!ctx) throw new Error("Canvas not supported");
+                        const projection = geoEquirectangular().fitSize(
+                            [bitmapWidth, bitmapHeight],
+                            { type: "Sphere" }
+                        );
+                        const pathGenerator = geoPath()
+                            .projection(projection)
+                            .context(ctx);
+                        ctx.fillStyle = "#000";
+                        ctx.fillRect(0, 0, bitmapWidth, bitmapHeight);
+                        ctx.fillStyle = "#fff";
+                        ctx.beginPath();
+                        landFeatures.features.forEach((feature) => {
+                            pathGenerator(feature);
+                        });
+                        ctx.fill();
+                        const imageData = ctx.getImageData(
+                            0,
+                            0,
+                            bitmapWidth,
+                            bitmapHeight
+                        );
+                        const pixels = imageData.data;
+                        const isOnLand = (lng, lat) => {
+                            const x =
+                                Math.round(((lng + 180) / 360) * bitmapWidth) %
+                                bitmapWidth;
+                            const y = Math.round(((90 - lat) / 180) * bitmapHeight);
+                            const clampedY = Math.max(0, Math.min(bitmapHeight - 1, y));
+                            const idx = (clampedY * bitmapWidth + x) * 4;
+                            return pixels[idx] > 128;
+                        };
+
+                        dotCoordinates = [];
+                        const baseStep = dotSpacing * 0.08;
+                        for (let lat = -90; lat <= 90; lat += baseStep) {
+                            const latRad = (Math.abs(lat) * Math.PI) / 180;
+                            const cosLat = Math.cos(latRad);
+                            const lngStep =
+                                cosLat > 0.01
+                                    ? baseStep / Math.max(0.3, cosLat)
+                                    : 360;
+                            for (let lng = -180; lng < 180; lng += lngStep) {
+                                if (allDots || isOnLand(lng, lat)) {
+                                    dotCoordinates.push([lng, lat]);
+                                }
                             }
                         }
+                        cachedDotCoordsMap.set(dotCoordKey, dotCoordinates);
                     }
 
                     if (dotCoordinates.length > 0) {
@@ -730,6 +756,7 @@ export default function Globe({
         }
         globeGroup.add(continentOutlineGroup);
         markerMeshes.forEach((mesh) => globeGroup.add(mesh));
+        renderer.render(scene, camera);
 
         const animate = () => {
             let needsRender = false;

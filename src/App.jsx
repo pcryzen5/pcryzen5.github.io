@@ -1,11 +1,12 @@
-import { useEffect } from "react";
+import { useEffect, lazy, Suspense } from "react";
 import { HashRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Navbar from "./components/shared/Navbar";
 import Footer from "./components/shared/Footer";
 import PortfolioHome from "./pages/PortfolioHome";
-import ProjectDetail from "./pages/ProjectDetail";
 import GlitterWrap from "./components/block/GlitterWrap";
 import "./App.css";
+
+const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
 
 // Scroll to hash handler for single page smooth scrolling
 function ScrollToHash() {
@@ -38,7 +39,7 @@ export default function App() {
         {/* Full Page Fixed Background Warp Animation */}
         <div className="fixed inset-0 pointer-events-none z-0">
           <GlitterWrap 
-            particleCount={350}
+            particleCount={250}
             color1="#ffffff"
             color2="#a8a29e"
             color3="#57534e"
@@ -58,7 +59,20 @@ export default function App() {
           <main className="flex-grow">
             <Routes>
               <Route path="/" element={<PortfolioHome />} />
-              <Route path="/project/:id" element={<ProjectDetail />} />
+              <Route
+                path="/project/:id"
+                element={
+                  <Suspense
+                    fallback={
+                      <div className="min-h-screen flex items-center justify-center text-stone-500 font-mono text-sm">
+                        Loading Project...
+                      </div>
+                    }
+                  >
+                    <ProjectDetail />
+                  </Suspense>
+                }
+              />
             </Routes>
           </main>
           <Footer />

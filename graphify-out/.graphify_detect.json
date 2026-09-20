@@ -1,0 +1,78 @@
+{
+  "files": {
+    "code": [
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\eslint.config.js",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\package.json",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\postcss.config.js",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\public\\data\\ne_110m_land.json",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\App.jsx",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\components\\block\\DraggableGrid.jsx",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\components\\block\\GlitterWrap.jsx",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\components\\block\\Globe.jsx",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\components\\block\\HoverImageReveal.jsx",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\components\\block\\TrustPill.jsx",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\components\\forms\\PortfolioContactForm.jsx",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\components\\sections\\PortfolioAbout.jsx",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\components\\sections\\PortfolioCertificates.jsx",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\components\\sections\\PortfolioContact.jsx",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\components\\sections\\PortfolioHero.jsx",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\components\\sections\\PortfolioProjects.jsx",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\components\\shared\\DotGrid.jsx",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\components\\shared\\Footer.jsx",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\components\\shared\\Navbar.jsx",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\data\\portfolioData.js",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\data\\portfolio_certificates_data.js",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\lib\\imageUtils.js",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\main.jsx",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\pages\\PortfolioHome.jsx",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\pages\\ProjectDetail.jsx",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\schemas\\contactSchema.js",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\schemas\\portfolioContactSchema.js",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\vite.config.js"
+    ],
+    "document": [
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\.github\\workflows\\deploy.yml",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\README.md",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\index.html",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\public\\robots.txt",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\assets\\fonts\\iFonts-License.txt"
+    ],
+    "paper": [
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\public\\shubham_resume.pdf"
+    ],
+    "image": [
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\public\\favicon.svg",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\public\\og-image.jpg",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\public\\og-image.png",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\assets\\images\\high_court.jpg",
+      "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\assets\\images\\lawyer.png"
+    ],
+    "video": []
+  },
+  "total_files": 39,
+  "total_words": 114107,
+  "needs_graph": true,
+  "warning": null,
+  "skipped_sensitive": [],
+  "unclassified": [
+    "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\.gitignore",
+    "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\movark-font.zip",
+    "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\public\\site.webmanifest",
+    "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\public\\sitemap.xml",
+    "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\App.css",
+    "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\assets\\fonts\\movark-bold.otf",
+    "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\assets\\fonts\\movark-light.otf",
+    "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\assets\\fonts\\movark-regular.otf",
+    "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\src\\index.css"
+  ],
+  "walk_errors": [],
+  "ignored": [],
+  "pruned_noise_dirs": [
+    "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\.git\\",
+    "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\dist\\",
+    "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\graphify-out\\",
+    "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final\\node_modules\\"
+  ],
+  "graphifyignore_patterns": 29,
+  "scan_root": "C:\\Users\\shubhAM\\Desktop\\projects\\portfolio_final"
+}

@@ -11,6 +11,25 @@ export default function PortfolioAbout() {
       const config = portfolioData.githubStorageConfig;
       if (!config || !config.username || !repoName) return;
 
+      const cacheKey = `portfolio_gh_${config.username}_${repoName}`;
+      const cacheTimestampKey = `${cacheKey}_ts`;
+      const CACHE_TTL_MS = 12 * 60 * 60 * 1000; // 12 hours
+
+      // Check localStorage first
+      try {
+        const cached = localStorage.getItem(cacheKey);
+        const cachedTs = localStorage.getItem(cacheTimestampKey);
+        if (cached && cachedTs && Date.now() - Number(cachedTs) < CACHE_TTL_MS) {
+          const parsed = JSON.parse(cached);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            setImages(parsed);
+            return;
+          }
+        }
+      } catch (e) {
+        // Ignore localStorage error (e.g. incognito quota)
+      }
+
       const apiUrl = `https://api.github.com/repos/${config.username}/${repoName}/contents`;
 
       try {
@@ -35,14 +54,17 @@ export default function PortfolioAbout() {
 
           if (filtered.length > 0) {
             setImages(filtered);
-          } else {
-            console.warn(`No image files found in GitHub repo: ${repoName}. Falling back to default list.`);
-            setImages(fallbackList);
+            try {
+              localStorage.setItem(cacheKey, JSON.stringify(filtered));
+              localStorage.setItem(cacheTimestampKey, Date.now().toString());
+            } catch (e) {
+              // Ignore cache write error
+            }
           }
         }
       } catch (err) {
-        console.error(`Failed to fetch images from GitHub repo: ${repoName}. Falling back to default list.`, err);
-        setImages(fallbackList);
+        // Silently preserve current list (which is already pre-populated)
+        console.warn(`Could not refresh ${repoName} from GitHub. Using existing list.`);
       }
     };
 

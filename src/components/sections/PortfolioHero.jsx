@@ -186,7 +186,7 @@ export default function PortfolioHero() {
               scale={8.5}
               initialLatitude={20}
               initialLongitude={77}
-              oceanColor="rgba(0, 0, 0, 0)"
+              oceanColor="#000000"
               outlineColor="#ffffff"
               outlineWidth={0.5}
               showOutline={true}

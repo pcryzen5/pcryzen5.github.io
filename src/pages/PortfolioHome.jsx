@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import PortfolioHero from "../components/sections/PortfolioHero";
 import PortfolioAbout from "../components/sections/PortfolioAbout";
 import PortfolioProjects from "../components/sections/PortfolioProjects";
+import PortfolioCertificates from "../components/sections/PortfolioCertificates";
 import PortfolioContact from "../components/sections/PortfolioContact";
 
 export default function PortfolioHome() {
@@ -22,7 +23,10 @@ export default function PortfolioHome() {
       {/* 3. Selected Projects (Hover Reveal) */}
       <PortfolioProjects />
 
-      {/* 4. Connect Form */}
+      {/* 4. Certificates Section */}
+      {/* <PortfolioCertificates /> */}
+
+      {/* 5. Connect Form */}
       <PortfolioContact />
     </motion.div>
   );
