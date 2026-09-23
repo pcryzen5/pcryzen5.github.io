@@ -54,8 +54,8 @@ export default function Navbar() {
       animate={{ y: 0 }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${isScrolled
-          ? "bg-black/95 border-b border-stone-900 backdrop-blur-md py-4 shadow-lg"
-          : "bg-transparent py-6"
+        ? "bg-black/95 border-b border-stone-900 backdrop-blur-md py-4 shadow-lg"
+        : "bg-transparent py-6"
         }`}
     >
       <div className="w-full px-6 md:px-12 flex items-center justify-between">
@@ -100,15 +100,21 @@ export default function Navbar() {
           </button>
         </div>
 
-        {/* Right Side: Logo Name */}
+        {/* Right Side: Logo & Name */}
         <div className="flex items-center">
           <button
             onClick={() => handleNavClick("hero")}
-            className="text-xl font-display font-bold tracking-widest text-white hover:text-stone-300 transition-colors cursor-pointer uppercase"
+            className="flex items-center gap-3 text-xl font-display font-bold tracking-widest text-white hover:text-stone-300 transition-colors cursor-pointer uppercase group"
           >
-            Shubham Purkait
+            <img
+              src="/favicon.svg"
+              alt="SP Logo"
+              className="w-8 h-8 rounded-lg border border-stone-800 group-hover:border-stone-600 transition-colors object-contain"
+            />
+            <span>Shubham Purkait</span>
           </button>
         </div>
+
       </div>
 
       {/* Mobile Menu Panel */}
