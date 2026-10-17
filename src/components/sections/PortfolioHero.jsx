@@ -167,9 +167,9 @@ export default function PortfolioHero() {
         </div>
 
         {/* Right Side: Interactive 3D Globe */}
-        <div className="relative w-full flex items-center justify-center order-1 lg:order-2 h-[400px] sm:h-[500px]">
+        <div className="relative w-full flex items-center justify-center order-1 lg:order-2 h-[400px] sm:h-[500px] lg:h-[600px]">
           {/* Ambient Glow */}
-          <div className="absolute w-[350px] h-[350px] bg-white/[0.02] blur-[100px] rounded-full pointer-events-none" />
+          <div className="absolute w-[350px] h-[350px] lg:w-[480px] lg:h-[480px] bg-white/[0.025] blur-[120px] rounded-full pointer-events-none" />
 
           {/* Interactive Globe Container */}
           <motion.div
@@ -178,7 +178,7 @@ export default function PortfolioHero() {
             transition={{ duration: 1.2, delay: 0.4 }}
             className="w-full h-full relative"
           >
-            <Globe 
+            <Globe
               speed={1.5}
               smoothing={6}
               dots={{ color: "#ffffff", size: 6, density: 7.5, allDots: false }}
@@ -208,6 +208,8 @@ export default function PortfolioHero() {
       >
         <span className="text-[10px] uppercase tracking-widest text-stone-500 font-light">Scroll</span>
         <div className="w-[1px] h-8 bg-stone-700" />
+
+
       </motion.div>
     </div>
   );

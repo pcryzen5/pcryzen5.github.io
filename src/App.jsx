@@ -4,6 +4,7 @@ import Navbar from "./components/shared/Navbar";
 import Footer from "./components/shared/Footer";
 import PortfolioHome from "./pages/PortfolioHome";
 import GlitterWrap from "./components/block/GlitterWrap";
+import { AudioProvider } from "./context/AudioContext";
 import "./App.css";
 
 const ProjectDetail = lazy(() => import("./pages/ProjectDetail"));
@@ -34,8 +35,9 @@ function ScrollToHash() {
 export default function App() {
   return (
     <Router>
-      <ScrollToHash />
-      <div className="flex flex-col min-h-screen bg-black text-stone-100 selection:bg-white selection:text-black relative">
+      <AudioProvider>
+        <ScrollToHash />
+        <div className="flex flex-col min-h-screen bg-black text-stone-100 selection:bg-white selection:text-black relative">
         {/* Full Page Fixed Background Warp Animation */}
         <div className="fixed inset-0 pointer-events-none z-0">
           <GlitterWrap 
@@ -78,6 +80,7 @@ export default function App() {
           <Footer />
         </div>
       </div>
+      </AudioProvider>
     </Router>
   );
 }

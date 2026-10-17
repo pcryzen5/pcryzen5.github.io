@@ -39,6 +39,19 @@
   --animate-scroll-reveal: scroll-reveal linear both;
 }
 
+@utility animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 /* Custom Base CSS Styles */
 @utility text-glow-gold {
   text-shadow: 0 0 12px rgba(189, 136, 64, 0.3);
