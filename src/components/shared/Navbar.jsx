@@ -36,6 +36,7 @@ export default function Navbar() {
 
   const navLinks = [
     { name: "About", target: "about" },
+    { name: "Hot Wheels", target: "hotwheels" },
     { name: "Work", target: "projects" },
     { name: "Music", target: "music" },
     { name: "Movies", target: "movies" },

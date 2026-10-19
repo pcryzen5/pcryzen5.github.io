@@ -8,9 +8,9 @@ Crafted with **React 19**, **Vite 6**, **Tailwind CSS v4**, and **Framer Motion 
 
 ## 🌟 Key Features
 
-- **🌌 Cinematic Hero Banner & Globe**: Dark aesthetic landing screen featuring a dynamic scrambling CRT typewriter title in the custom **Movark** display font, paired with an interactive 3D SVG/Canvas Globe.
+- **🌌 Cinematic Hero Banner & 3D Interactive Model**: Dark aesthetic landing screen featuring a dynamic scrambling CRT typewriter title in the custom **Movark** display font, paired with an interactive 3D Thrine Model Embed.
 - **✨ Full Page Glitter Background**: Integrated `GlitterWrap` for a gorgeous full-page background warp/glitter particle animation.
-- **📸 Draggable Grid Galleries**: Double archives ("My Life" and "My Failures") featuring custom infinite draggable photo grid walls that dynamically fetch images from user-configured GitHub repositories (falling back to curated Unsplash collections) and auto-scroll at 0.5x speed.
+- **📸 Draggable Grid & 3D Swipe Stack Galleries**: Triple archives: "My Life" and "My Failures" (infinite draggable photo grid walls) and "Hot Wheels Collection" (interactive 3D fanned card stack powered by Originkit and Framer Motion) that dynamically fetch images from user-configured GitHub repositories (`portfolio-my-life`, `portfolio-my-failures`, `Hotwheels_collection`) with 12-hour localStorage caching.
 - **📁 Hover-Reveal Selected Projects**: Integrated `HoverImageReveal` to showcase active work commissions, triggering spring-based cursor tracking of custom images.
 - **🔍 Project Details View (`/project/:id`)**: Comprehensive case briefs detailing role, core challenges, and creative solutions.
 - **📋 Validated Contact Form**: Integrated with Zod validation schema (`portfolioContactSchema.js`) and client-side form validation for direct channel emailing (via Web3Forms or Formspree integration).
@@ -27,6 +27,8 @@ Crafted with **React 19**, **Vite 6**, **Tailwind CSS v4**, and **Framer Motion 
 | **Routing** | [React Router v7](https://reactrouter.com/) |
 | **Styling & Design System** | [Tailwind CSS v4](https://tailwindcss.com/) (`@tailwindcss/vite`) |
 | **Animations & Motion** | [Framer Motion 12](https://www.framer.com/motion/) |
+| **Card Deck Mechanics** | [Originkit Swipe Stack](https://www.originkit.dev/components/swipe-stack) |
+| **3D Model Embed** | [Thrine 3D](https://thrine.app) |
 | **Form Management** | [React Hook Form 7](https://react-hook-form.com/) |
 | **Schema Validation** | [Zod 3](https://zod.dev/) + `@hookform/resolvers` |
 | **Icons & Media** | [Lucide React](https://lucide.dev/) |
@@ -45,12 +47,14 @@ portfolio/
 │   │   ├── block/          # Interactive UI blocks
 │   │   │   ├── DraggableGrid.jsx      # Infinite draggable, lightbox-enabled photo gallery
 │   │   │   ├── GlitterWrap.jsx        # Canvas-based warp/glitter particle background
-│   │   │   ├── Globe.jsx              # Interactive 3D SVG/Canvas Globe
-│   │   │   └── HoverImageReveal.jsx   # Mouse-following case/project preview box
+│   │   │   ├── HoverImageReveal.jsx   # Mouse-following case/project preview box
+│   │   │   ├── ModelEmbed.jsx         # Thrine 3D Interactive Model Embed
+│   │   │   ├── MusicPlayerDeck.jsx    # Interactive music player deck
+│   │   │   └── SwipeStack.jsx         # 3D fanned swipeable card stack (Originkit)
 │   │   ├── forms/          # Form components
 │   │   │   └── PortfolioContactForm.jsx # Zod-validated portfolio contact form
 │   │   ├── sections/       # Main landing page sections
-│   │   │   ├── PortfolioHero.jsx      # Hero banner with Retro Scrambler & 3D Globe
+│   │   │   ├── PortfolioHero.jsx      # Hero banner with Retro Scrambler & 3D Model Embed
 │   │   │   ├── PortfolioAbout.jsx     # Biography and double draggable photo archives
 │   │   │   ├── PortfolioProjects.jsx  # Highlighted project cases with HoverImageReveal
 │   │   │   └── PortfolioContact.jsx   # Direct communication links and form container

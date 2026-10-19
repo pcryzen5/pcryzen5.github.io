@@ -1,17 +1,19 @@
 import { useState, useEffect } from "react";
 import DraggableGrid from "../block/DraggableGrid";
+import SwipeStack from "../block/SwipeStack";
 import { portfolioData } from "../../data/portfolioData";
 
 export default function PortfolioAbout() {
   const [lifeImages, setLifeImages] = useState(portfolioData.lifeGallery);
   const [failuresImages, setFailuresImages] = useState(portfolioData.failuresGallery);
+  const [hotwheelsImages, setHotwheelsImages] = useState(portfolioData.hotwheelsGallery);
 
   useEffect(() => {
-    const fetchImages = async (repoName, setImages, fallbackList) => {
+    const fetchImages = async (repoName, setImages) => {
       const config = portfolioData.githubStorageConfig;
       if (!config || !config.username || !repoName) return;
 
-      const cacheKey = `portfolio_gh_${config.username}_${repoName}`;
+      const cacheKey = `portfolio_gh_v2_${config.username}_${repoName}`;
       const cacheTimestampKey = `${cacheKey}_ts`;
       const CACHE_TTL_MS = 12 * 60 * 60 * 1000; // 12 hours
 
@@ -49,7 +51,8 @@ export default function PortfolioAbout() {
             })
             .map(file => ({
               id: file.sha,
-              url: file.download_url
+              url: file.download_url,
+              src: file.download_url
             }));
 
           if (filtered.length > 0) {
@@ -68,8 +71,9 @@ export default function PortfolioAbout() {
       }
     };
 
-    fetchImages(portfolioData.githubStorageConfig.lifeRepo, setLifeImages, portfolioData.lifeGallery);
-    fetchImages(portfolioData.githubStorageConfig.failuresRepo, setFailuresImages, portfolioData.failuresGallery);
+    fetchImages(portfolioData.githubStorageConfig.lifeRepo, setLifeImages);
+    fetchImages(portfolioData.githubStorageConfig.failuresRepo, setFailuresImages);
+    fetchImages(portfolioData.githubStorageConfig.hotwheelsRepo, setHotwheelsImages);
   }, []);
   return (
     <section
@@ -138,6 +142,36 @@ export default function PortfolioAbout() {
           </div>
 
           <DraggableGrid items={failuresImages} autoScrollSpeed={0.5} />
+        </div>
+
+        {/* 4. "Hot Wheels Collection" 3D Swipe Stack */}
+        <div id="hotwheels" className="space-y-6 text-left border-t border-stone-900 pt-16">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end gap-2">
+            <div>
+              <span className="text-amber-500 font-bold uppercase tracking-widest text-[10px] block mb-1">
+                Archive 03 // 1:64 Scale
+              </span>
+              <h3 className="font-display font-semibold uppercase tracking-wider text-xl text-stone-200">
+                Diecast Collection
+              </h3>
+            </div>
+            <p className="text-stone-400 text-xs font-light tracking-wide max-w-md">
+              Interactive 3D fanned card stack of diecast miniature cars and collector builds fetched from GitHub. Flick or drag cards to cycle through the garage.
+            </p>
+          </div>
+
+          <SwipeStack
+            items={hotwheelsImages}
+            cardWidth={320}
+            cardHeight={440}
+            cardRadius={18}
+            swipeThreshold={50}
+            tiltAngleStart={0}
+            tiltAngle={-30}
+            xOffset={16}
+            repoName={portfolioData.githubStorageConfig?.hotwheelsRepo || "Hotwheels_collection"}
+            githubUsername={portfolioData.githubStorageConfig?.username || "pcryzen5"}
+          />
         </div>
 
       </div>

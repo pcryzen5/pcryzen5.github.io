@@ -23,7 +23,8 @@ export const portfolioData = {
   githubStorageConfig: {
     username: "pcryzen5", // To be updated by the user in their settings
     lifeRepo: "portfolio-my-life",
-    failuresRepo: "portfolio-my-failures"
+    failuresRepo: "portfolio-my-failures",
+    hotwheelsRepo: "Hotwheels_collection"
   },
 
   // Contact Form configuration (Web3Forms or Formspree)
@@ -129,6 +130,11 @@ export const portfolioData = {
       url: "https://raw.githubusercontent.com/pcryzen5/portfolio-my-failures/main/Screenshot%20(723).png"
     }
   ],
+
+  // Hot Wheels Collection - dynamically fetched from GitHub repo `Hotwheels_collection`
+  // Initially empty; when repo is empty or awaiting assets, displays:
+  // { "message": "soming soon", "status": "loading" }
+  hotwheelsGallery: [],
 
   // Selected work projects
   projects: [
