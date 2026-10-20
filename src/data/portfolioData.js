@@ -207,7 +207,10 @@ export const portfolioData = {
         "HTML5 / Semantic WYSIWYG",
         "Vanilla CSS3 (Design Tokens)",
         "Canvas Confetti"
-      ]
+      ],
+
+      github: "https://github.com/pcryzen5/online_blog.git",
+      live: ""
     },
 
     {
@@ -254,7 +257,10 @@ export const portfolioData = {
         "LocalStorage API",
         "Async Clipboard API",
         "GitHub Actions (CI/CD)"
-      ]
+      ],
+
+      github: "https://github.com/pcryzen5/Cold_E-mail_Template.git",
+      live: "https://pcryzen5.github.io/Cold_E-mail_Template/"
     },
 
 
@@ -300,7 +306,10 @@ export const portfolioData = {
         "Pillow (PIL)",
         "Multithreading",
         "Finite State Machine (FSM)"
-      ]
+      ],
+
+      github: "https://github.com/pcryzen5/rocky_virtual_pet.git",
+      live: ""
     }
 
 
